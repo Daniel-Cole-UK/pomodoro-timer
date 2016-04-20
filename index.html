@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pomodoro Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Signika:600|Lobster' rel='stylesheet' type='text/css'>      
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+<div id="background" class="container-fluid">
+  <div id="headerRow" class="row text-center">
+    <div class="col-xs-12">
+      <h1>Pomodoro Timer</h1>
+    </div>
+  </div>
+  <!--End of headerRow-->  
+  <div id="timeInputsRow" class="row text-center">
+        <div id="sessionTimeInput" class="col-xs-6 times">
+          <ul class="list-inline">
+            <li><input id="sessionMinus" class="btn btn-default btn-xs buttons" type="button" onclick="this.blur();" value="-"></li>
+            <li><p id="sessionMins">1</p></li>
+            <li><input id="sessionPlus" class="btn btn-default btn-xs buttons" type="button" onclick="this.blur();" value="+"></li>
+          </ul>
+          <p>Session Length</p>
+        </div>   
+        <!--End of sessionTimeInputs - left-screen -->
+        <div id="breakTimeInput" class="col-xs-6 times">
+          <ul class="list-inline">
+            <li><input id="breakMinus" class="btn btn-default btn-xs buttons" type="button" onclick="this.blur();" value="-"></li>
+            <li><p id="breakMins">1</p></li>
+            <li><input id="breakPlus" class="btn btn-default btn-xs buttons" type="button" onclick="this.blur();" value="+"></li>
+          </ul>
+          <p>Break Length</p>
+        </div>   
+        <!--End of breakTimeInputs - right-screen -->        
+  </div>
+  <!--End of timeInputsRow-->
+  <div id="timerRow" class="row text-center">
+    <div class="timerContainer">
+      <div id="timerContents">
+      <p id="sOB">Set times & click me</p>
+      <p id="timer"></p>
+      </div>
+    </div>
+  </div>
+  <!--End of timerRow-->
+  <!--Load audio files-->
+  <audio id="dingNoise">
+  <source src="audio/ding.mp3"></source>
+  </audio>
+  <audio id="breakNoise">
+  <source src="audio/break.mp3"></source>
+  </audio>
+  <audio id="workNoise">
+  <source src="audio/towork.mp3"></source>
+  </audio>
+  <!--end of audio file load--> 
+</div>
+<!--End of background container-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>       
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>    
+<script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

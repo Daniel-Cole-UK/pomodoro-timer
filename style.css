@@ -1,0 +1,268 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  color: white;
+  margin-top: 5vh;
+  font-size: 375%;
+}
+
+p {
+  font-family: 'Lobster', cursive;
+  color: white;
+}
+
+.times {
+  margin-top: 5vh;
+  font-size: 150%;
+}
+
+#background {
+  background: url('img/Pomodoro_background.jpg') center center fixed no-repeat;
+  background-color: black;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  min-height: 100%;
+}
+
+.timerContainer {
+  color: white;
+  background-color: #000033;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border: solid white 1px;
+	box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+	background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+	background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+	background-image: -o-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+	background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+}
+
+#timerContents {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sOB {
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 235%;
+}
+
+#timer {
+  font-size: 400%;
+  font-family: 'Signika', sans-serif;
+}
+
+@media only screen and (max-width: 400px) {
+  .timerContainer {
+        top: 70%;
+        width:160px;
+        height:160px;
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+  #timer {
+        font-size: 300%;
+  }
+  #sOB {
+        font-size: 150%;
+  }
+  .times {
+  font-size: 100%;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .timerContainer {
+        top: 70%;
+        width:160px;
+        height:160px;
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    
+    }
+  #timer {
+        font-size: 300%;
+  }
+  #sOB {
+        font-size: 150%;
+  }
+  .times {
+  font-size: 100%;
+  }
+}
+
+.buttons {
+  outline:none;
+  border-width: 2px;
+  border-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  background-color:transparent;
+  transition: all;
+}
+
+.touch .buttons:hover {
+  outline:none;
+  border-width: 2px;
+  border-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  color:white;
+  background-color:transparent;
+}
+
+.buttons:hover {
+  outline:none;
+  border-color: white;
+  color:black;
+  background-color:#E19B17;
+}
+
+.no-touch .buttons:target {
+  outline:none;
+  border-color: white;
+  color:white;
+  background-color:#E19B17;
+}
+
+.no-touch .buttons:active {
+  outline:none;
+  border-color: white;
+  color:white;
+  background-color:#E19B17;
+}
+
+.no-touch .buttons:focus {
+  outline:none;
+  border-color: white;
+  color:white;
+  background-color:#E19B17;
+}
+
+.no-touch .buttons:active:focus {
+  outline:none;
+  border-color: white;
+  color:white;
+  background-color:#E19B17;
+}
+
+.pausedGlow {
+  -webkit-animation: neonPaused 2s ease-in-out infinite alternate;
+  -moz-animation: neonPaused 2s ease-in-out infinite alternate;
+  animation: neonPaused 2s ease-in-out infinite alternate;
+}
+
+.sessionGlow {
+  -webkit-animation: neonSession 1s ease-in-out infinite alternate;
+  -moz-animation: neonSession 1s ease-in-out infinite alternate;
+  animation: neonSession 1s ease-in-out infinite alternate;
+}
+
+.breakGlow {
+  -webkit-animation: neonBreak 1s ease-in-out infinite alternate;
+  -moz-animation: neonBreak 1s ease-in-out infinite alternate;
+  animation: neonBreak 1s ease-in-out infinite alternate;
+}
+
+@keyframes neonBreak {
+  from {
+    box-shadow: 0 0 5px #00cc00, 0 0 35px #33ff33;
+  }
+  to {
+    box-shadow: 0 0 10px #00cc00, 0 0 20px #00cc00, 0 0 30px #00cc00, 0 0 40px #33ff33, 0 0 70px #33ff33, 0 0 80px #33ff33, 0 0 100px #33ff33, 0 0 150px #33ff33;
+  }
+}
+
+@-webkit-keyframes neonBreak {
+  from {
+    box-shadow: 0 0 5px #00cc00, 0 0 35px #33ff33;
+  }
+  to {
+    box-shadow: 0 0 10px #00cc00, 0 0 20px #00cc00, 0 0 30px #00cc00, 0 0 40px #33ff33, 0 0 70px #33ff33, 0 0 80px #33ff33, 0 0 100px #33ff33, 0 0 150px #33ff33;
+  }
+}
+
+@-moz-keyframes neonBreak {
+  from {
+    box-shadow: 0 0 5px #00cc00, 0 0 35px #33ff33;
+  }
+  to {
+    box-shadow: 0 0 10px #00cc00, 0 0 20px #00cc00, 0 0 30px #00cc00, 0 0 40px #33ff33, 0 0 70px #33ff33, 0 0 80px #33ff33, 0 0 100px #33ff33, 0 0 150px #33ff33;
+  }
+}
+
+@keyframes neonSession {
+  from {
+    box-shadow: 0 0 5px #007acc, 0 0 35px #33adff;
+  }
+  to {
+    box-shadow: 0 0 100px #007acc, 0 0 150px #33adff;
+  }
+}
+
+@-webkit-keyframes neonSession {
+  from {
+    box-shadow: 0 0 5px #007acc, 0 0 35px #33adff;
+  }
+  to {
+    box-shadow: 0 0 10px #007acc, 0 0 20px #007acc, 0 0 30px #007acc, 0 0 40px #33adff, 0 0 70px #33adff, 0 0 80px #33adff, 0 0 100px #33adff, 0 0 150px #33adff;
+  }
+}
+
+@-moz-keyframes neonSession {
+  from {
+    box-shadow: 0 0 5px #007acc, 0 0 35px #33adff;
+  }
+  to {
+    box-shadow: 0 0 10px #007acc, 0 0 20px #007acc, 0 0 30px #007acc, 0 0 40px #33adff, 0 0 70px #33adff, 0 0 80px #33adff, 0 0 100px #33adff, 0 0 150px #33adff;
+  }
+}
+
+@keyframes neonPaused {
+  from {
+    box-shadow: 0 0 5px #ffffff, 0 0 20px #d9d9d9;
+  }
+  to {
+    box-shadow: 0 0 10px #ffffff, 0 0 12px #ffffff, 0 0 17px #ffffff, 0 0 20px #ffffff, 0 0 30px #d9d9d9, 0 0 40px #d9d9d9, 0 0 50px #d9d9d9, 0 0 60px #d9d9d9;
+  }
+}
+
+@-webkit-keyframes neonPaused {
+  from {
+    box-shadow: 0 0 5px #ffffff, 0 0 20px #d9d9d9;
+  }
+  to {
+    box-shadow: 0 0 10px #ffffff, 0 0 12px #ffffff, 0 0 17px #ffffff, 0 0 20px #ffffff, 0 0 30px #d9d9d9, 0 0 40px #d9d9d9, 0 0 50px #d9d9d9, 0 0 60px #d9d9d9;
+  }
+}
+
+@-moz-keyframes neonPaused {
+  from {
+    box-shadow: 0 0 5px #ffffff, 0 0 20px #d9d9d9;
+  }
+  to {
+    box-shadow: 0 0 10px #ffffff, 0 0 12px #ffffff, 0 0 17px #ffffff, 0 0 20px #ffffff, 0 0 30px #d9d9d9, 0 0 40px #d9d9d9, 0 0 50px #d9d9d9, 0 0 60px #d9d9d9;
+  }
+}
