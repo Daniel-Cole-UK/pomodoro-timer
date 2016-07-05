@@ -20,6 +20,5 @@ Created Using:
 
 Future Improvements:
 
-- Comment code
 - Allow user to amend break time while work timer is set
 - Re-factor JavaScript (FCC moved this project from intermediate to advanced)
