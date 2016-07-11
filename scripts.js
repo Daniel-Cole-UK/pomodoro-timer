@@ -8,38 +8,38 @@ var pausedOnce = false;
 var beenReset = false;
 
 $(document).ready(function() {
-  document.getElementById("sessionMins").innerHTML = sessionMin;
-  document.getElementById("breakMins").innerHTML = breakMin;
+  $("#sessionMins").html(sessionMin);
+  $("#breakMins").html(breakMin);
 });
 
 $("#sessionMinus").click(function() {
   // If the timer has not been started, allow session minutes to be amended
   if (sessionMin > 1 && running === false && beenReset === false && pausedOnce === false) {
     sessionMin--;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
   // If the timer has been paused in session mode, but not reset, set minutes back to original then minus 1. Set seconds to 59. Set reset to true.
   } else if (sessionMin > 1 && running === false && beenReset === false && pausedOnce === true && sessionOrBreak === "Session") {
     sessionMin = (originalSessionMin ++);
     sessionMin--;
     sessionSec = 00;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
     beenReset = true;
     time = (sessionMin < 10 ? "0" + sessionMin : sessionMin) + ":" + (sessionSec < 10 ? "0" + sessionSec : sessionSec);
-    document.getElementById("timer").innerHTML = time;    
+    $("#timer").html(time);    
   // If the timer has been paused and reset during session mode, minus one from minutes.
   } else if (sessionMin > 1 && running === false && beenReset === true && pausedOnce === true && sessionOrBreak === "Session") {
     sessionMin--;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
     time = (sessionMin < 10 ? "0" + sessionMin : sessionMin) + ":" + (sessionSec < 10 ? "0" + sessionSec : sessionSec);
-    document.getElementById("timer").innerHTML = time;
+    $("#timer").html(time);
   } else {
     if (sessionMin > -1 && sessionMin < 2 && running === false && beenReset === false && pausedOnce === true && sessionOrBreak === "Session") {
     sessionMin = 1;
     sessionSec = 0;
     beenReset = true;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
     time = (sessionMin < 10 ? "0" + sessionMin : sessionMin) + ":" + (sessionSec < 10 ? "0" + sessionSec : sessionSec);
-    document.getElementById("timer").innerHTML = time;      
+    $("#timer").html(time);      
     }
   }
 });
@@ -48,22 +48,22 @@ $("#sessionPlus").click(function() {
   // If the timer has not been started, allow session minutes to be amended
   if (sessionMin < 9999999 && running === false && beenReset === false && pausedOnce === false) {
     sessionMin++;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
   // If the timer has been paused, but not reset, set minutes back to original then add 1. Set seconds to 59. Set reset to true.
   } else if (sessionMin < 9999999 && running === false && beenReset === false && pausedOnce === true && sessionOrBreak === "Session") {
     sessionMin = (originalSessionMin --);
     sessionMin++;
     sessionSec = 00;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
     beenReset = true;
     time = (sessionMin < 10 ? "0" + sessionMin : sessionMin) + ":" + (sessionSec < 10 ? "0" + sessionSec : sessionSec);
-    document.getElementById("timer").innerHTML = time;
+    $("#timer").html(time);
   // If the timer has been paused and reset, minus one from minutes.
   } else if (sessionMin < 9999999 && running === false && beenReset === true && pausedOnce === true && sessionOrBreak === "Session") {
     sessionMin++;
-    document.getElementById("sessionMins").innerHTML = sessionMin;
+    $("#sessionMins").html(sessionMin);
     time = (sessionMin < 10 ? "0" + sessionMin : sessionMin) + ":" + (sessionSec < 10 ? "0" + sessionSec : sessionSec);
-    document.getElementById("timer").innerHTML = time;
+    $("#timer").html(time);
   };   
 });
 
@@ -71,30 +71,30 @@ $("#breakMinus").click(function() {
   // If the timer has not been started, allow break minutes to be amended
   if (breakMin > 1 && running === false && beenReset === false && pausedOnce === false) {
     breakMin--;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
   // If the timer has been paused in break mode, but not reset, set minutes back to original then minus 1. Set seconds to 59. Set reset to true.
   } else if (breakMin > 1 && running === false && beenReset === false && pausedOnce === true && sessionOrBreak === "Break") {
     breakMin = (originalBreakMin ++);
     breakMin--;
     breakSec = 00;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
     beenReset = true;
     time = (breakMin < 10 ? "0" + breakMin : breakMin) + ":" + (breakSec < 10 ? "0" + breakSec : breakSec);
-    document.getElementById("timer").innerHTML = time;
+    $("#timer").html(time);
   // If the timer has been paused and reset during break mode, minus one from minutes.
   } else if (breakMin > 1 && running === false && beenReset === true && pausedOnce === true && sessionOrBreak === "Break") {
     breakMin--;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
     time = (breakMin < 10 ? "0" + breakMin : breakMin) + ":" + (breakSec < 10 ? "0" + breakSec : breakSec);
-    document.getElementById("timer").innerHTML = time;
+    $("#timer").html(time);
   } else {
     if (breakMin > -1 && breakMin < 2 && running === false && beenReset === false && pausedOnce === true && sessionOrBreak === "Break") {
     breakMin = 1;
     breakSec = 0;
     beenReset = true;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
     time = (breakMin < 10 ? "0" + breakMin : breakMin) + ":" + (breakSec < 10 ? "0" + breakSec : breakSec);
-    document.getElementById("timer").innerHTML = time;      
+    $("#timer").html(time);     
     }
   }
 });
@@ -103,22 +103,22 @@ $("#breakPlus").click(function() {
   // If the timer has not been started, allow break minutes to be amended
   if (breakMin < 9999999 && running === false && beenReset === false && pausedOnce === false) {
     breakMin++;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
   // If the timer has been paused, but not reset, set minutes back to original then add 1. Set seconds to 59. Set reset to true.
   } else if (breakMin < 9999999 && running === false && beenReset === false && pausedOnce === true && sessionOrBreak === "Break") {
     breakMin = (originalBreakMin --);
     breakMin++;
     breakSec = 00;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
     beenReset = true;
     time = (breakMin < 10 ? "0" + breakMin : breakMin) + ":" + (breakSec < 10 ? "0" + breakSec : breakSec);
-    document.getElementById("timer").innerHTML = time;
-  // If the timer has been paused and reset, minus one from minutes.
+    $("#timer").html(time);
+  // If the timer has been paused and reset, add 1 to minutes.
   } else if (breakMin < 9999999 && running === false && beenReset === true && pausedOnce === true && sessionOrBreak === "Break") {
     breakMin++;
-    document.getElementById("breakMins").innerHTML = breakMin;
+    $("#breakMins").html(breakMin);
     time = (breakMin < 10 ? "0" + breakMin : breakMin) + ":" + (breakSec < 10 ? "0" + breakSec : breakSec);
-    document.getElementById("timer").innerHTML = time;
+    $("#timer").html(time);
   };
 });
 
@@ -155,8 +155,7 @@ $(".timerContainer").click(function() {
       $(".timerContainer").addClass("pausedGlow");
       pausedOnce = true;
     }
-    document.getElementById("sOB").innerHTML = sessionOrBreak + " Paused";
-
+    $("#sOB").html(sessionOrBreak + " Paused");
   }
 });
 
@@ -206,6 +205,6 @@ function decrement() {
   }
 
   //Populate the clock element with the strings
-  document.getElementById("timer").innerHTML = time;
-  document.getElementById("sOB").innerHTML = sessionOrBreak;
+  $("#timer").html(time);
+  $("#sOB").html(sessionOrBreak);
 }
